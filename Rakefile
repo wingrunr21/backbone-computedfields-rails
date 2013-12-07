@@ -14,14 +14,9 @@ def version
 end
 
 def latest_tag
-  #tags = JSON.parse(open('https://api.github.com/repos/alexanderbeletsky/backbone-computedfields/tags').read)
-  #tags.sort!{|a,b| b["name"] <=> a["name"]}
-  #tags.first
-
-  # computedfields isn't tagging right now
-  # manually specify the version and sha
-  # see https://github.com/alexanderbeletsky/backbone-computedfields/issues/16
-  tag = {"name"=>"0.0.7", "commit"=>{"sha"=>"master"}}
+  tags = JSON.parse(open('https://api.github.com/repos/alexanderbeletsky/backbone-computedfields/tags').read)
+  tags.sort!{|a,b| b["name"] <=> a["name"]}
+  tags.first
 end
 
 namespace :backbone_computedfields do
